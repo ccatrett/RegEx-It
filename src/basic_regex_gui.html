@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Highlight Regex Matches</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Highlight Regex Matches</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Enter your text here"></textarea><br>
+    <input type="text" id="regexPattern" placeholder="Enter regex pattern"><br>
+    <p id="outputText"></p>
+
+    <script>
+        function highlightMatches() {
+            let text = document.getElementById('inputText').value;
+            let patternInput = document.getElementById('regexPattern').value;
+            
+            try {
+                let pattern = new RegExp(patternInput, 'g');
+                let highlightedText = text.replace(pattern, match => `<span class="highlight">${match}</span>`);
+                document.getElementById('outputText').innerHTML = highlightedText;
+            } catch (e) {
+                document.getElementById('outputText').innerHTML = "Invalid regex pattern.";
+            }
+        }
+
+        document.getElementById('inputText').addEventListener('input', highlightMatches);
+        document.getElementById('regexPattern').addEventListener('input', highlightMatches);
+    </script>
+</body>
+</html>
