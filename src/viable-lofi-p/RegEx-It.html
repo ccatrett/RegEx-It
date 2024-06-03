@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReGex-It</title>
+    <link rel="stylesheet" href="RegEx-It.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RegEx-It</h1>
+        <form id="regex-form">
+            <label for="regex-input">Regular Expression:</label>
+            <div class="regex-container">
+                <span class="regex-slash">/</span>
+                <input type="text" id="regex-input" placeholder="pattern">
+                <span class="regex-slash">/</span>
+                <input type="text" id="flags-input" placeholder="flags" maxlength="6">
+            </div>
+            
+            <label for="text-input">Text to Match:</label>
+            <textarea id="text-input" rows="10" placeholder="Enter text here..."></textarea>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="RegEx-It.js"></script>
+</body>
+</html>
+
