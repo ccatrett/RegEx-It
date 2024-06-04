@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#regex-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.regex-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.regex-slash {
+    color: gray;
+    font-size: 20px;
+}
+
+input[type="text"], textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    margin-right: 10px;
+}
+
+.info-btn {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    outline: none;
+    user-select: none;
+}
+
+.info-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 1;
+    left: calc(100% - 30px); /* Align to the right of the parent */
+    top: 55px;
+}
+
+.info-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info-dropdown ul li {
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: default;
+}
+
+.flag {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+}
+
+#output {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+
+.highlight-blue {
+    background-color: lightblue;
+}
+
+.highlight-darkblue {
+    background-color: #47D2FA;/*blue;*/
+    /*color: white;*/
+}
