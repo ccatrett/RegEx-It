@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Railroad Diagram Example</title>
+    <style>
+        /* Styles for form and railroad diagrams */
+        #regexInputForm {
+            margin-bottom: 20px;
+        }
+
+        #regexInputForm label,
+        #regexInputForm button {
+            margin-right: 5px;
+        }
+
+        .railroad-diagram path {
+            stroke-width: 2;
+            stroke: black;
+            fill: none;
+        }
+
+        .railroad-diagram text {
+            font: bold 14px monospace;
+            text-anchor: middle;
+            fill: blue; /* Text color for the diagram */
+        }
+
+        .railroad-diagram svg {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<a href="RegEx-It.html" target="_self">ReGex-It Pattern Matcher</a>
+<div id="regexInputForm">
+    <label for="regexInput">Enter Regex:</label>
+    <input type="text" id="regexInput" placeholder="a(b|c)*d?" />
+    <button id="generateBtn">Generate Diagram</button>
+</div>
+
+<div id="diagram" class="railroad-diagram"></div>
+
+<script src="https://unpkg.com/railroad-diagrams"></script>
+<script>
+    function handleRegexSubmit() {
+        const regexInput = document.getElementById('regexInput').value;
+        const diagramContainer = document.getElementById('diagram');
+        diagramContainer.innerHTML = ''; // Clear the diagram container
+
+        try {
+            const parsedDiagram = parseRegex(regexInput);
+            diagramContainer.appendChild(parsedDiagram.toSVG());
+        } catch (e) {
+            diagramContainer.textContent = 'Error: ' + e.message;
+        }
+    }
+
+    function parseRegex(regex) {
+        let escape = false;
+        let components = [];
+        let lastComponent;
+        let charClass = false;
+
+        for (const c of regex) {
+            if (charClass) {
+                if (c === ']') {
+                    charClass = false;
+                }
+                // Add to the character class container
+                continue;
+            }
+
+            if (escape) {
+                components.push(Terminal(c)); // treat the escaped character as a literal
+                escape = false; // reset the escape flag
+            } else {
+                switch (c) {
+                    case '\\':
+                        escape = true;
+                        break;
+                    case '*':
+                        lastComponent = components.pop();
+                        components.push(ZeroOrMore(lastComponent));
+                        break;
+                    case '+':
+                        lastComponent = components.pop();
+                        components.push(OneOrMore(lastComponent));
+                        break;
+                    case '?':
+                        lastComponent = components.pop();
+                        components.push(Optional(lastComponent));
+                        break;
+                    case '|':
+                        const left = components.pop();
+                        const right = components.pop(); // assuming there's a right-side element
+                        components.push(Choice(0, left, right));
+                        break;
+                    case '[':
+                        charClass = true;
+                        // Initialize a container for the character class
+                        break;
+                    case '(':
+                        // Start of a new group, which is used for subsequent '|' or ')'
+                        break;
+                    case ')':
+                        // End of a group, which could precede a quantifier
+                        break;
+                    default:
+                        components.push(Terminal(c));
+                        break;
+                }
+            }
+        }
+
+        if (escape) throw new Error('Dangling \\');
+        if (components.length === 0) throw new Error('No components found');
+        return Diagram(Sequence(...components)); // Pass the components as arguments to Sequence
+    }
+
+    document.getElementById('generateBtn').addEventListener('click', handleRegexSubmit);
+</script>
+</body>
+</html>
