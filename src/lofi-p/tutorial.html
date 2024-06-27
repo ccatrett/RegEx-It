@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Regex Tutorial</title>
+    <link rel="stylesheet" href="tutorial.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Regular Expressions Tutorial</h1>
+    </header>
+    <main>
+        <section id="intro" class="bubble">
+            <h2>Introduction to Regular Expressions</h2>
+            <p>Regular expressions (regex) are powerful tools used for matching patterns in text. They are sequences of characters that define search patterns, primarily used for string matching, replacement, and parsing operations. Understanding regex can greatly enhance your ability to process and manipulate text data efficiently. They are supported by many programming languages, including Python, JavaScript, and Java, as well as tools like grep, sed, and various text editors.</p>
+            <p>Regex can seem daunting at first, but breaking down the components and understanding the basic concepts can make them more approachable. They are composed of literal characters and metacharacters that define how the search pattern is constructed. By mastering regex, you can perform complex text searches and manipulations with just a few lines of code.</p>
+            <p>This tutorial will guide you through the fundamental concepts and provide interactive examples to help you practice and solidify your understanding. Let's dive into the world of regular expressions!</p>
+        </section>
+        <section id="regex-concepts" class="bubble">
+            <h2>Basic Concepts</h2>
+            <button id="toggle-explanations">Show/Hide Explanations</button>
+            <div class="concepts-container">
+                <div class="concept">
+                    <h3>Literal Characters</h3>
+                    <p>Literal characters match the exact character sequence in the target text. For example, the regex <code>abc</code> matches the string "abc". It will not match "ab" or "abcd". Literal characters are the simplest form of regex patterns and are useful for straightforward searches.</p>
+                </div>
+                <div class="concept">
+                    <h3>Character Classes</h3>
+                    <p>Character classes allow you to match any one character from a set of characters. For example, <code>[abc]</code> matches 'a', 'b', or 'c'. You can also define ranges of characters, such as <code>[a-z]</code> for lowercase letters. Character classes can be negated using the caret (<code>^</code>), so <code>[^abc]</code> matches any character except 'a', 'b', or 'c'.</p>
+                    <p>Common character classes:</p>
+                    <ul>
+                        <li><code>\d</code> - matches any digit (equivalent to <code>[0-9]</code>)</li>
+                        <li><code>\w</code> - matches any word character (equivalent to <code>[a-zA-Z0-9_]</code>)</li>
+                        <li><code>\s</code> - matches any whitespace character (spaces, tabs, etc.)</li>
+                    </ul>
+                </div>
+                <div class="concept">
+                    <h3>Quantifiers</h3>
+                    <p>Quantifiers specify how many times the preceding character or group can repeat. For example, <code>a*</code> matches 'a' zero or more times, so it will match "", "a", "aa", "aaa", and so on. Quantifiers are powerful tools for matching variable-length text segments.</p>
+                    <p>Common quantifiers:</p>
+                    <ul>
+                        <li><code>*</code> - matches 0 or more times</li>
+                        <li><code>+</code> - matches 1 or more times</li>
+                        <li><code>?</code> - matches 0 or 1 time</li>
+                        <li><code>{n}</code> - matches exactly n times</li>
+                        <li><code>{n,}</code> - matches n or more times</li>
+                        <li><code>{n,m}</code> - matches between n and m times</li>
+                    </ul>
+                </div>
+                <div class="concept">
+                    <h3>Anchors</h3>
+                    <p>Anchors are used to match positions within a string rather than actual characters. They are useful for ensuring that a pattern appears at a specific location in the text:</p>
+                    <ul>
+                        <li><code>^</code> - matches the start of a string. For example, <code>^abc</code> matches "abc" only if it appears at the beginning of the string.</li>
+                        <li><code>$</code> - matches the end of a string. For example, <code>abc$</code> matches "abc" only if it appears at the end of the string.</li>
+                    </ul>
+                </div>
+                <div class="concept">
+                    <h3>Groups and Ranges</h3>
+                    <p>Groups allow parts of a regex to be grouped together and treated as a single unit. This is useful for applying quantifiers to multiple characters or for capturing parts of the match. Parentheses (<code>()</code>) are used for grouping.</p>
+                    <ul>
+                        <li><code>(abc)</code> - matches the exact sequence "abc"</li>
+                        <li><code>(a|b|c)</code> - matches 'a', 'b', or 'c'. The pipe symbol (<code>|</code>) denotes alternation.</li>
+                    </ul>
+                    <p>Ranges define a set of characters by specifying the start and end points, separated by a hyphen:</p>
+                    <ul>
+                        <li><code>[a-z]</code> - matches any lowercase letter</li>
+                        <li><code>[A-Z]</code> - matches any uppercase letter</li>
+                        <li><code>[0-9]</code> - matches any digit</li>
+                        <li><code>[a-zA-Z]</code> - matches any uppercase or lowercase letter</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive" class="bubble">
+            <h2>Try It Yourself</h2>
+        Coy insert button here
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Regex Tutorial. All rights reserved.</p>
+    </footer>
+    <script src="tutorial.js"></script>
+</body>
+</html>

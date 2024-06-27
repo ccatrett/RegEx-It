@@ -1,0 +1,164 @@
+/* Ensure body background and text colors */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    color: #fff;
+}
+
+/* Main section styling */
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Bubble box styling */
+.bubble {
+    background-color: #fff;
+    border-left: 5px solid #ff69b4;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    width: calc(50% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+    .bubble:hover {
+        background-color: #ffc0cb;
+    }
+
+/* Pink-colored subheadings */
+h2 {
+    color: #ff69b4;
+    border-bottom: 2px solid #ff69b4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover {
+        background-color: #ff1493;
+    }
+
+.concepts-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Concept box styling */
+.concept {
+    background-color: #fff;
+    border: 1px solid #ff69b4;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    flex: 0 0 auto;
+    width: 300px; /* Adjust width as needed */
+    margin: 10px;
+    display: inline-block; /* Ensure they display side by side */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+@media (max-width: 768px) {
+    .concept {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+.concept:hover {
+    background-color: #ffe4e1;
+}
+
+/* Regex tester styling */
+#regex-tester {
+    background-color: #fff;
+    border: 1px solid #ff69b4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    #regex-tester label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    #regex-tester input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #ff69b4;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+    }
+
+        #regex-tester input:focus {
+            border-color: #ff1493;
+        }
+
+#test-regex {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    #test-regex:hover {
+        background-color: #ff1493;
+    }
+
+#results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffe4e1;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    footer p {
+        margin: 0;
+        color: #fff;
+    }
