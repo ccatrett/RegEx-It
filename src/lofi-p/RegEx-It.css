@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-.container {
+.outer-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;

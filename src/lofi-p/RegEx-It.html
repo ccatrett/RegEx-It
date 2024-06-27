@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReGex-It</title>
-    <link rel="stylesheet" href="RegEx-It.css">
-</head>
-<body>
-    <div class="container">
-        <h1>RegEx-It</h1>
-        <div id="regex-form">
-            <label for="regex-input">Regular Expression:</label>
-            <div class="regex-container">
-                <span class="regex-slash">/</span>
-                <input type="text" id="regex-input" placeholder="pattern">
-                <span class="regex-slash">/</span>
-                <input type="text" id="flags-input" placeholder="flags" maxlength="6">
-                <button id="flags-info-btn" class="info-btn">?</button>
-            </div>
-            <div id="flags-info-dropdown" class="info-dropdown">
-                <ul>
-                    <li><span class="flag">g</span> - Global search</li>
-                    <li><span class="flag">i</span> - Case-insensitive search</li>
-                    <li><span class="flag">m</span> - Multi-line search</li>
-                    <li><span class="flag">u</span> - Unicode</li>
-                    <li><span class="flag">y</span> - Sticky search</li>
-                    <li><span class="flag">s</span> - Allows "." to match newline</li>
-                </ul>
-            </div>
 
-            <label for="text-input">Text to Match:</label>
-            <textarea id="text-input" rows="10" placeholder="Enter text here..."></textarea>
-        </div>
-        <div id="output"></div>
-    </div>
-    <script src="RegEx-It.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ReGex-It</title>
+        <link rel="stylesheet" href="RegEx-It.css">
+    </head>
+    
+    
+    <body>
+        <!-- Outer Container -->
+        <div class="outer-container">
+            
+            <!-- Header Title -->
+            <h1>RegEx-It</h1>
+            
+
+            <!-- Form Fields -->
+            <div id="regex-form">
+
+                <label for="regex-input">Regular Expression:</label>
+
+
+                <div class="regex-container">
+                    <span class="regex-slash">/</span>
+                    <input type="text" id="regex-input" placeholder="pattern">
+                    <span class="regex-slash">/</span>
+                    <input type="text" id="flags-input" placeholder="flags" maxlength="6">
+                    <button id="flags-info-btn" class="info-btn">?</button>
+                </div>
+
+
+                <div id="flags-info-dropdown" class="info-dropdown">
+
+                    <ul>
+                        <li><span class="flag">g</span> - Global search</li>
+                        <li><span class="flag">i</span> - Case-insensitive search</li>
+                        <li><span class="flag">m</span> - Multi-line search</li>
+                        <li><span class="flag">u</span> - Unicode</li>
+                        <li><span class="flag">y</span> - Sticky search</li>
+                        <li><span class="flag">s</span> - Allows "." to match newline</li>
+                    </ul>
+
+                </div>
+
+
+                <label for="text-input">Text to Match:</label>
+                <textarea id="text-input" rows="10" placeholder="Enter text here..."></textarea>
+
+
+            </div> <!-- End Form Fields -->
+
+            <div id="output"></div> 
+
+            <a href="rail-road.html" target="_self">Rail-Road Diagram Generator</a>
+        </div> <!-- End Outer Container -->
+        
+
+        <!-- Scripts -->
+        <script src="RegEx-It.js"></script>
+
+    </body>
 </html>
