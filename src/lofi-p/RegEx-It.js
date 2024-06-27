@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const flagsInfoDropdown = document.getElementById('flags-info-dropdown');
 
     // Click event for the flags info button
-    flagsInfoBtn.addEventListener('click', function(event) {
-        flagsInfoDropdown.style.display = flagsInfoDropdown.style.display === 'none' ? 'block' : 'none';
+    flagsInfoBtn.addEventListener('click', function (event) {
+        flagsInfoDropdown.style.display = flagsInfoDropdown.style.display === 'block' ? 'none' : 'block';
         event.stopPropagation(); // Prevent event from propagating to the document
     });
 
     // Close the dropdown if clicked outside
-    document.addEventListener('click', function() {
-        if (flagsInfoDropdown.style.display === 'block') {
+    document.addEventListener('click', function (event) {
+        if (!flagsInfoBtn.contains(event.target)) {
             flagsInfoDropdown.style.display = 'none';
         }
     });

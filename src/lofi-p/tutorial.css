@@ -1,4 +1,5 @@
-/* Ensure body background and text colors */
+/* tutorial.css */
+/* General body styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -8,7 +9,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Header styling */
+/* Header styles */
 header {
     background: linear-gradient(90deg, #ff69b4, #ffb6c1);
     padding: 20px;
@@ -21,7 +22,7 @@ h1 {
     color: #fff;
 }
 
-/* Main section styling */
+/* Main section styles */
 main {
     padding: 20px;
     display: flex;
@@ -29,7 +30,7 @@ main {
     justify-content: space-around;
 }
 
-/* Bubble box styling */
+/* Bubble box styles */
 .bubble {
     background-color: #fff;
     border-left: 5px solid #ff69b4;
@@ -53,7 +54,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Button styling */
+/* Button styles */
 button {
     background-color: #ff69b4;
     color: #fff;
@@ -69,13 +70,14 @@ button {
         background-color: #ff1493;
     }
 
+/* Concepts container */
 .concepts-container {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
 }
 
-/* Concept box styling */
+/* Concept box styles */
 .concept {
     background-color: #fff;
     border: 1px solid #ff69b4;
@@ -83,15 +85,15 @@ button {
     border-radius: 10px;
     transition: background-color 0.3s ease;
     flex: 0 0 auto;
-    width: 300px; /* Adjust width as needed */
+    width: 300px;
     margin: 10px;
-    display: inline-block; /* Ensure they display side by side */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
     .concept {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 }
 
@@ -99,7 +101,7 @@ button {
     background-color: #ffe4e1;
 }
 
-/* Regex tester styling */
+/* Regex tester styles */
 #regex-tester {
     background-color: #fff;
     border: 1px solid #ff69b4;
@@ -115,50 +117,60 @@ button {
     }
 
     #regex-tester input {
-        width: calc(100% - 22px);
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ff69b4;
+        border-radius: 5px;
+    }
+
+    #regex-tester textarea {
+        width: 100%;
         padding: 10px;
         border: 1px solid #ff69b4;
         border-radius: 5px;
-        transition: border-color 0.3s ease;
+        resize: vertical;
     }
 
-        #regex-tester input:focus {
-            border-color: #ff1493;
-        }
+/* Other specific styles for railroad diagram */
+.railroad-diagram path {
+    stroke-width: 2;
+    stroke: black;
+    fill: none;
+}
 
-#test-regex {
+.railroad-diagram text {
+    font: bold 14px monospace;
+    text-anchor: middle;
+    fill: blue; /* Text color for the diagram */
+}
+
+/* Button styles */
+#navigate-regex-btn {
+    display: block;
     background-color: #ff69b4;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 20px auto;
     border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
-    #test-regex:hover {
+    #navigate-regex-btn:hover {
         background-color: #ff1493;
     }
 
-#results {
-    margin-top: 20px;
+
+.railroad-diagram svg {
     padding: 10px;
-    background-color: #ffe4e1;
-    border: 1px solid #ff69b4;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
 }
 
-/* Footer styling */
-footer {
-    text-align: center;
-    background: linear-gradient(90deg, #ff69b4, #ffb6c1);
-    padding: 10px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-    footer p {
-        margin: 0;
-        color: #fff;
-    }

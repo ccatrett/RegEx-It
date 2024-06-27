@@ -76,8 +76,15 @@
 
         <section id="interactive" class="bubble">
             <h2>Try It Yourself</h2>
-        Coy insert button here
+            <section id="navigate-to-regex">
+                <button id="navigate-regex-btn">Go to RegEx-It</button>
+            </section>
         </section>
+        <script>
+            document.getElementById('navigate-regex-btn').addEventListener('click', function () {
+                window.location.href = 'RegEx-It.html';
+            });
+        </script>
     </main>
     <footer>
         <p>&copy; 2024 Regex Tutorial. All rights reserved.</p>

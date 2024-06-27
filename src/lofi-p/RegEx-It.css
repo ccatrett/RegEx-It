@@ -4,12 +4,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light gray background */
     margin: 0;
 }
 
 .outer-container {
-    background-color: #fff;
+    background-color: #ffe0f0; /* Light pink background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,6 +21,7 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #ff66a3; /* Pinkish color for the title */
 }
 
 #regex-form {
@@ -31,6 +32,7 @@ h1 {
 label {
     margin-top: 10px;
     margin-bottom: 5px;
+    color: #ff66a3; /* Pinkish color for labels */
 }
 
 .regex-container {
@@ -40,7 +42,7 @@ label {
 }
 
 .regex-slash {
-    color: gray;
+    color: #ff66a3; /* Pinkish color for slashes */
     font-size: 20px;
 }
 
@@ -59,7 +61,7 @@ input[type="text"] {
     display: inline-block;
     width: 25px;
     height: 25px;
-    background-color: green;
+    background-color: #ff66a3; /* Pinkish color for the info button */
     color: white;
     text-align: center;
     line-height: 25px;
@@ -74,9 +76,9 @@ input[type="text"] {
 .info-dropdown {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 5px;
     border-radius: 3px;
     z-index: 1;
@@ -84,17 +86,17 @@ input[type="text"] {
     top: 55px;
 }
 
-.info-dropdown ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    .info-dropdown ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.info-dropdown ul li {
-    padding: 5px;
-    margin-bottom: 5px;
-    cursor: default;
-}
+        .info-dropdown ul li {
+            padding: 5px;
+            margin-bottom: 5px;
+            cursor: default;
+        }
 
 .flag {
     font-weight: bold;
@@ -112,10 +114,104 @@ textarea {
 }
 
 .highlight-blue {
-    background-color: lightblue;
+    background-color: lightpink; /* or any other color */
 }
 
 .highlight-darkblue {
-    background-color: #47D2FA;/*blue;*/
-    /*color: white;*/
+    background-color: hotpink; /* blue color */
+    color: white; /* text color */
+}
+
+/* Styling for the Back to Tutorial and Rail-Road Diagram Generator buttons */
+
+#back-to-tutorial-btn,
+a[href="rail-road.html"] {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff66a3; /* Pinkish color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+    #back-to-tutorial-btn:hover,
+    a[href="rail-road.html"]:hover {
+        background-color: #e64980; /* Lighter shade of pink on hover */
+    }
+
+    #back-to-tutorial-btn:active,
+    a[href="rail-road.html"]:active {
+        transform: translateY(1px); /* Push the button down slightly when clicked */
+    }
+
+.info-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ff66a3; /* Pinkish color */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    left: calc(100% - 30px); /* Position to the right of the parent */
+    width: 200px; /* Adjust width as needed */
+}
+
+    .info-dropdown ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .info-dropdown ul li {
+            padding: 8px 0;
+            cursor: default;
+            color: white; /* Text color */
+        }
+
+            .info-dropdown ul li:hover {
+                background-color: rgba(255, 255, 255, 0.1); /* Lighten on hover */
+            }
+
+.flag {
+    font-weight: bold;
+}
+
+/* Styles for form and railroad diagrams */
+#regexInputForm {
+    margin-bottom: 20px;
+}
+
+    #regexInputForm label,
+    #regexInputForm button {
+        margin-right: 5px;
+    }
+
+/* Railroad diagram specific styles */
+.railroad-diagram path {
+    stroke-width: 2;
+    stroke: #ff66a3; /* Lighter pink stroke color */
+}
+
+.railroad-diagram text {
+    font: bold 14px monospace;
+    text-anchor: middle;
+    fill: #ff66a3; /* Pinkish color for text */
+}
+
+/* Override generated SVG styles */
+.railroad-diagram svg circle {
+    fill: #ff66a3; /* Pinkish color for circles (bubbles) */
+}
+
+.railroad-diagram svg {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffe0f0; /* Light pink background */
 }
